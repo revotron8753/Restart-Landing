@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Design tokens (docs/design/CLAUDE.md). Dark mode follows prefers-color-scheme and [data-theme="dark"]. */
+:root {
+  --bg: #fff8f6;
+  --surface: #ffffff;
+  --ink: #22142e;
+  --muted: #6c5f77;
+  --line: #f1e1e0;
+  --coral: #ff5a5f;
+  --coral-ink: #e23e44;
+  --violet: #7640ee;
+  --marigold: #e39a2d;
+  --blush: #ffecea;
+  --lav: #f2ecff;
+  --shadow: 0 18px 50px -24px rgba(80, 20, 40, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #150f1c;
+    --surface: #1f1729;
+    --ink: #f7eff4;
+    --muted: #b4a7bf;
+    --line: #302640;
+    --coral: #ff6b70;
+    --coral-ink: #ff8589;
+    --violet: #a07cff;
+    --marigold: #f1b55a;
+    --blush: #2b1820;
+    --lav: #231b37;
+    --shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.7);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #150f1c;
+  --surface: #1f1729;
+  --ink: #f7eff4;
+  --muted: #b4a7bf;
+  --line: #302640;
+  --coral: #ff6b70;
+  --coral-ink: #ff8589;
+  --violet: #a07cff;
+  --marigold: #f1b55a;
+  --blush: #2b1820;
+  --lav: #231b37;
+  --shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-coral: var(--coral);
+  --color-coral-ink: var(--coral-ink);
+  --color-violet: var(--violet);
+  --color-marigold: var(--marigold);
+  --color-blush: var(--blush);
+  --color-lav: var(--lav);
+  --color-ok: #1ba86b;
+
+  --font-display: var(--font-bricolage), var(--font-urbanist), system-ui, sans-serif;
+  --font-sans: var(--font-urbanist), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-deva: var(--font-tiro), "Noto Sans Devanagari", serif;
+
+  --shadow-card: var(--shadow);
+
+  --animate-fan: fan 1s 0.2s ease-out both;
+  --animate-bob: bob 6s ease-in-out infinite;
+  --animate-blink: blink 1s infinite;
+
+  @keyframes fan {
+    from {
+      transform: none;
+    }
+  }
+  @keyframes bob {
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0.25;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 3px solid var(--violet);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}

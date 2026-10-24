@@ -7,6 +7,7 @@ import { Container } from "./ui/Container";
 import { Eyebrow } from "./ui/Eyebrow";
 
 const policies = [
+  { href: "/age-restriction", label: "Age Restriction (18+)" },
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/refund-policy", label: "Refund Policy" },
   { href: "/terms", label: "Terms & Conditions" },

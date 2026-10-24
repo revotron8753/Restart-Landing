@@ -10,6 +10,7 @@ const links = [
   { href: "/privacy", label: "Privacy" },
   { href: "/refund-policy", label: "Refunds" },
   { href: "/terms", label: "Terms" },
+  { href: "/age-restriction", label: "18+" },
 ];
 
 export function Footer() {
